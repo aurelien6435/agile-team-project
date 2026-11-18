@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Campus Connect - Connexion</title>
+</head>
+<body>
+  <h1>Connexion</h1>
+
+  <form onsubmit="connexion(event)">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Mot de passe</label>
+    <input type="password" id="password" required>
+
+    <button type="submit">Se connecter</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    function connexion(event) {
+      event.preventDefault();
+      document.getElementById("message").textContent = "Connexion réussie !";
+    }
+  </script>
+</body>
+</html>
