@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Événements du campus</title>
+</head>
+<body>
+    <h1>Événements à venir</h1>
+
+    <div id="evenements"></div>
+
+    <script>
+        const evenements = [
+            {
+                titre: "Tournoi sportif",
+                date: "2026-12-05",
+                lieu: "Gymnase du campus"
+            },
+            {
+                titre: "Soirée étudiante",
+                date: "2026-11-28",
+                lieu: "Campus"
+            }
+        ];
+
+        const liste = document.getElementById("evenements");
+
+        evenements.sort((a, b) =>
+            new Date(a.date) - new Date(b.date)
+        );
+
+        if (evenements.length === 0) {
+            liste.textContent = "Aucun événement à venir";
+        } else {
+            evenements.forEach(event => {
+                const p = document.createElement("p");
+                p.textContent =
+                    `${event.titre} - ${event.date} - ${event.lieu}`;
+                liste.appendChild(p);
+            });
+        }
+    </script>
+</body>
+</html>
